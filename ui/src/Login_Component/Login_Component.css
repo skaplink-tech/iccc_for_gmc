@@ -1,0 +1,236 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* 🔑 KILLS PAGE SCROLL */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.login-container {
+  height: 100vh; /* 🔑 NOT min-height */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 80px;
+  background-image: url("../assets/Wastemanagement_bg_image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* ================= LOGIN CARD ================= */
+.login-form-wrapper {
+  width: 100%;
+  max-width: 430px;
+  max-height: calc(100vh - 40px); /* 🔑 CRITICAL */
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 10px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.welcome-header {
+  text-align: center;
+}
+
+.gmclogo {
+  width: 60px;
+  margin: 0 auto 16px;
+}
+
+.welcome-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.welcome-subtitle {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ================= FORM ================= */
+.login-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #2c3e50;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #787575;
+  border-radius: 6px;
+  background-color: #f4f6f9;
+}
+
+.form-input:focus {
+  border-color: #00bcd4;
+  background-color: #fff;
+  outline: none;
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 3px;
+}
+
+/* ================= PASSWORD ================= */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .form-input {
+  padding-right: 42px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= CAPTCHA ================= */
+.captcha-container {
+  display: grid;
+  grid-template-columns: 1fr 110px 40px;
+  gap: 6px;
+}
+
+.captcha-display {
+  height: 40px;
+  border: 1px solid #ccc;
+  background: #ecf0f1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.captcha-text {
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.refresh-btn {
+  height: 40px;
+  background: #00bcd4;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.refresh-btn svg {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+}
+
+/* ================= LOGIN BUTTON ================= */
+.login-btn {
+  width: 100%;
+  height: 42px;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #00bcd4;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+.form-footer {
+  display: flex;
+  align-items: center; /* 🔑 vertical alignment */
+  justify-content: space-between;
+  gap: 12px; /* spacing between left & right */
+  margin-top: 14px; /* space from Login button */
+  margin-bottom: 8px; /* breathing space before footer */
+  font-size: 13px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center; /* 🔑 checkbox + text aligned */
+  gap: 8px; /* spacing between checkbox & label */
+  cursor: pointer;
+}
+
+.forgot-password {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  color: #00bcd4;
+}
+
+.container-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
+  font-size: 13px;
+}
+
+.container-footer-poweredby {
+  display: flex;
+  align-items: center;
+}
+
+.skaplink-logo {
+  width: 110px;
+  margin-left: 6px;
+}
+
+.container-footer-version {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .login-container {
+    justify-content: center;
+    padding: 0 12px;
+  }
+
+  .login-form-wrapper {
+    max-height: 96vh;
+  }
+}
