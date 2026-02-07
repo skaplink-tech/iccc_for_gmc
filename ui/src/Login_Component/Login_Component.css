@@ -8,7 +8,7 @@
 html,
 body {
   height: 100%;
-  overflow: hidden; /* 🔑 KILLS PAGE SCROLL */
+  overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -32,18 +32,21 @@ body {
   width: 100%;
   max-width: 430px;
   max-height: calc(100vh - 40px); /* 🔑 CRITICAL */
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.40);
   border-radius: 10px;
   padding: 26px 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  box-shadow: transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.06) 0px 4px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 10px 0px;
 }
 
 /* ================= HEADER ================= */
 .welcome-header {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .gmclogo {
@@ -68,7 +71,7 @@ body {
 }
 
 .form-group {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .form-label {
@@ -124,43 +127,6 @@ body {
   cursor: pointer;
 }
 
-/* ================= CAPTCHA ================= */
-.captcha-container {
-  display: grid;
-  grid-template-columns: 1fr 110px 40px;
-  gap: 6px;
-}
-
-.captcha-display {
-  height: 40px;
-  border: 1px solid #ccc;
-  background: #ecf0f1;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.captcha-text {
-  font-family: "Courier New", monospace;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-.refresh-btn {
-  height: 40px;
-  background: #00bcd4;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.refresh-btn svg {
-  width: 18px;
-  height: 18px;
-  color: #fff;
-}
-
 /* ================= LOGIN BUTTON ================= */
 .login-btn {
   width: 100%;
@@ -180,14 +146,14 @@ body {
   display: flex;
   align-items: center; /* 🔑 vertical alignment */
   justify-content: space-between;
-  gap: 12px; /* spacing between left & right */
   margin-top: 14px; /* space from Login button */
-  margin-bottom: 8px; /* breathing space before footer */
+  margin-bottom: 18px; /* breathing space before footer */
   font-size: 13px;
 }
 
 .remember-me {
   display: flex;
+  flex-direction: row;
   align-items: center; /* 🔑 checkbox + text aligned */
   gap: 8px; /* spacing between checkbox & label */
   cursor: pointer;
@@ -203,24 +169,30 @@ body {
 }
 
 .container-footer {
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid #ddd;
-  padding-top: 8px;
+  padding-top: 12px;
   font-size: 13px;
 }
 
 .container-footer-poweredby {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .skaplink-logo {
   width: 110px;
+  height: auto;
   margin-left: 6px;
 }
 
 .container-footer-version {
   text-align: right;
   font-weight: 600;
+  color: #034547;
 }
 
 /* ================= MOBILE ================= */

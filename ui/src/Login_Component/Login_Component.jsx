@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Login_Component.css'
 import gmcLogo from '../assets/Guwahati_Municipal_Corporation_logo.png';
-import skaplinkLogo from '../assets/logoSkaplink.webp';
+import skaplinkLogo from '../assets/logoSkaplink.jpg';
 
 function Login_Component() {
 
     const [formData, setFormData] = useState({
-        role: '',
         userid: '',
         password: '',
-        captcha: ''
+        otp: '',
     });
 
     const [captchaText, setCaptchaText] = useState('');
@@ -82,22 +81,6 @@ function Login_Component() {
                 <form className="login-form" onSubmit={handleSubmit} noValidate>
 
                     <div className="form-group">
-                        <label className="form-label">Role *</label>
-                        <select
-                            name="role"
-                            className={`form-input ${errors.role ? 'input-error' : ''}`}
-                            value={formData.role}
-                            onChange={handleChange}
-                        >
-                            <option value="">Select Role</option>
-                            <option value="admin">Admin</option>
-                            <option value="operator">Operator</option>
-                            <option value="user">User</option>
-                        </select>
-                        {errors.role && <span className="error-message">{errors.role}</span>}
-                    </div>
-
-                    <div className="form-group">
                         <label className="form-label">Username *</label>
                         <input
                             type="text"
@@ -126,22 +109,16 @@ function Login_Component() {
                     </div>
 
                     <div className="form-group">
-                        <label className="form-label">Captcha *</label>
-                        <div className="captcha-container">
-                            <input
-                                type="text"
-                                name="captcha"
-                                className={`form-input ${errors.captcha ? 'input-error' : ''}`}
-                                value={formData.captcha}
-                                onChange={handleChange}
-                                placeholder="Enter captcha"
-                            />
-                            <div className="captcha-display">
-                                <span className="captcha-text">{captchaText}</span>
-                            </div>
-                            <button type="button" className="refresh-btn" onClick={generateCaptcha}>⟳</button>
-                        </div>
-                        {errors.captcha && <span className="error-message">{errors.captcha}</span>}
+                        <label className="form-label">OTP *</label>
+                        <input
+                            type="number"
+                            name="otp"
+                            className={`form-input ${errors.otp ? 'input-error' : ''}`}
+                            value={formData.otp}
+                            onChange={handleChange}
+                            placeholder="Enter your OTP"
+                        />
+                        {errors.otp && <span className="error-message">{errors.otp}</span>}
                     </div>
 
                     <button className="login-btn">Login</button>
